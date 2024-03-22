@@ -24,7 +24,7 @@ def validate_book_order_details(order_num, title, author, isbn, year_pub, quanti
 
     # Check order number
     try:
-        order_test = int(order_num)
+        int(order_num)
     except ValueError:
         print("Order Number is invalid")
     if not re.match(order_num_regex, str(order_num)):
@@ -39,7 +39,7 @@ def validate_book_order_details(order_num, title, author, isbn, year_pub, quanti
         raise ValueError("Author is invalid")
     # Check ISBN
     try:
-        isbn_test = int(isbn)
+        int(isbn)
     except ValueError:
         raise TypeError("ISBN must be an integer")
     if not re.match(ISBN_regex, str(isbn)):
@@ -47,14 +47,14 @@ def validate_book_order_details(order_num, title, author, isbn, year_pub, quanti
 
     # Check Year of publication
     try:
-        year_test = int(year_pub)
+        int(year_pub)
     except ValueError:
         raise TypeError("Year must be an integer")
     if not re.match(year_regex, str(year_pub)):
         raise ValueError("Year is invalid")
     # Check quantity
     try:
-        quantity_test = int(quantity)
+        int(quantity)
     except ValueError:
        raise TypeError("Quantity must be an integer")
     if int(quantity) < 0 or int(quantity) > 1000:
