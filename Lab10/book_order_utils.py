@@ -24,7 +24,7 @@ def validate_book_order_details(order_num, title, author, isbn, year_pub, quanti
 
     # Check order number
     try:
-        order_test = int(order_num)
+        int(order_num)
     except ValueError:
         print("Order Number is invalid")
     if not re.match(order_num_regex, str(order_num)):
